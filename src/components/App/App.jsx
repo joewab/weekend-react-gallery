@@ -42,7 +42,7 @@ function App() {
         <h1 className="App-title">The Nakasendo</h1>
       </header>
       <p>Stations:</p>
-     <GalleryList galleryList={galleryList}/>
+     <GalleryList galleryList={galleryList} updateLike={updateLike}/>
     </div>
   );
 }
