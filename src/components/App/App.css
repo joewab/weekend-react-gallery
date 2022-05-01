@@ -47,3 +47,12 @@ button{
   margin: 5px;
   align-self: center;
 }
+
+.image-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 25%;
+  justify-items: center;
+  width: 50%
+}

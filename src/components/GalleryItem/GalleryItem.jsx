@@ -31,7 +31,7 @@ function GalleryItem({ image, updateLike, deletePost }) {
                 Cool Rating: {image.likes}
                 <Button variant="outlined" onClick={toggleDescription}>show description</Button>
                 <Button variant="outlined" onClick={handleLike}>So Cool!</Button>
-                <button className= "btn btn-primary btn-block" onClick={handleDelete}>delete</button>
+                <Button variant="text" onClick={handleDelete}>delete</Button>
             </div>
         )
     }
@@ -44,7 +44,7 @@ function GalleryItem({ image, updateLike, deletePost }) {
                 Cool Rating: {image.likes}
                 <Button variant="outlined" onClick={toggleDescription}>hide description</Button>
                 <Button variant="outlined" onClick={handleLike}>So Cool!</Button>
-                <button className= "btn btn-primary btn-block" onClick={handleDelete}>delete</button>
+                <Button variant="text" onClick={handleDelete}>delete</Button>
             </div>
         )
     }

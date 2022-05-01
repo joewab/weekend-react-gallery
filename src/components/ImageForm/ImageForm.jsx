@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 function ImageForm({addImage}) {
   const [imageInput, setImageInput] = useState('');
@@ -17,16 +21,17 @@ function ImageForm({addImage}) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <form className = "image-form">
+      <TextField id="outlined-textarea"
         value={imageInput}
         onChange={(e) => { setImageInput(e.target.value) }}
         placeholder="image link" />
-      <input
+      <TextField fullWidth
+          id="fullWidth"
         value={descriptionInput}
         onChange={(e) => { setDescriptionInput(e.target.value) }}
         placeholder="description" />
-      <button className= "btn btn-primary btn-block">Submit</button>
+      <Button variant="text" onClick={handleSubmit}>Submit</Button>
     </form>
   )
 }
