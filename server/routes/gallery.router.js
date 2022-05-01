@@ -10,10 +10,10 @@ router.put("/like/:imageId", (req, res) => {
     console.log('in the PUT route');
     let sqlQuery = `
       UPDATE "gallery"
-      SET "likes"=$1
-      WHERE "id"=$2;
+      SET "likes"= likes + 1
+      WHERE "id"=$1;
       `;
-    let sqlValues = ["likes" + 1, req.params.imageId];
+    let sqlValues = [req.params.imageId];
     console.log('I am image id:', req.params.imageId);
     pool.query(sqlQuery, sqlValues)
       .then((dbResult) => {
