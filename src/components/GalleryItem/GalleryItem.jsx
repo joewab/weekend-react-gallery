@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function GalleryItem({ image, updateLike }) {
+function GalleryItem({ image, updateLike, deletePost }) {
     const [descriptionMode, setDescriptionMode] = useState(false);
 
     const toggleDescription = (e) => {
@@ -14,6 +14,12 @@ function GalleryItem({ image, updateLike }) {
 
     }
 
+    const handleDelete = (e) =>{
+        e.preventDefault();
+        deletePost(image.id);
+
+    }
+
 
     if (descriptionMode === false) {
         return (
@@ -22,6 +28,7 @@ function GalleryItem({ image, updateLike }) {
                 Cool Rating: {image.likes}
                 <button className= "btn btn-primary btn-block" onClick={toggleDescription}>show description</button>
                 <button className= "btn btn-primary btn-block" onClick={handleLike}>So Cool!</button>
+                <button className= "btn btn-primary btn-block" onClick={handleDelete}>delete</button>
             </div>
         )
     }
@@ -34,6 +41,7 @@ function GalleryItem({ image, updateLike }) {
                 Cool Rating: {image.likes}
                 <button className= "btn btn-primary btn-block" onClick={toggleDescription}>hide description</button>
                 <button className= "btn btn-primary btn-block" onClick={handleLike}>So Cool!</button>
+                <button className= "btn btn-primary btn-block" onClick={handleDelete}>delete</button>
             </div>
         )
     }

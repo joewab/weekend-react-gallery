@@ -72,4 +72,22 @@ router.post('/', (req, res) => {
   
   })
 
+  router.delete("/:imageId", (req, res) => {
+    let imageToDelete = req.params.imageId;
+    let sqlQuery = `
+      DELETE FROM "gallery"
+      WHERE "id"=$1;
+      `;
+    let sqlValues = [imageToDelete];
+    pool
+      .query(sqlQuery, sqlValues)
+      .then((dbResult) => {
+        res.sendStatus(200);
+      })
+      .catch((dbError) => {
+        console.log("error in DELETE /treats db request:");
+        res.sendStatus(500);
+      });
+  });
+
 module.exports = router;

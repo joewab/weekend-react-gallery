@@ -1,7 +1,7 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
 
-function GalleryList({galleryList, updateLike}) {
+function GalleryList({galleryList, updateLike, deletePost}) {
 
 
     console.log('galleryList: The Prop:', galleryList);
@@ -10,7 +10,7 @@ function GalleryList({galleryList, updateLike}) {
         {galleryList.map((image) => {
           return (
         <div key = {image.id}>
-          <GalleryItem key = {image.id} image = {image} updateLike = {updateLike}/>
+          <GalleryItem key = {image.id} image = {image} updateLike = {updateLike} deletePost = {deletePost}/>
         </div>
           )
         })}

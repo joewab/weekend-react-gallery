@@ -51,6 +51,20 @@ function App() {
 
 }
 
+const deletePost = (imageId) => {
+  console.log('this will delete!');
+  axios({
+      method: 'DELETE',
+      url: `/gallery/${imageId}`
+  }) .then(function(response) {
+      console.log(response);
+      getImages();
+  }) .catch(function(error){
+      console.log(error);
+  })
+
+}
+
   return (
     <div className="App">
       <header className="App-header">
@@ -60,7 +74,7 @@ function App() {
       <>
           <ImageForm addImage={addImage} />
       </>
-     <GalleryList galleryList={galleryList} updateLike={updateLike}/>
+     <GalleryList galleryList={galleryList} updateLike={updateLike} deletePost = {deletePost}/>
     </div>
   );
 }
