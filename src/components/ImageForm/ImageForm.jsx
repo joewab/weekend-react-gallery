@@ -26,7 +26,7 @@ function ImageForm({addImage}) {
         value={descriptionInput}
         onChange={(e) => { setDescriptionInput(e.target.value) }}
         placeholder="description" />
-      <button>Submit</button>
+      <button className= "btn btn-primary btn-block">Submit</button>
     </form>
   )
 }

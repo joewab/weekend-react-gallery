@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import Button from '@mui/material/Button';
 
 function GalleryItem({ image, updateLike, deletePost }) {
     const [descriptionMode, setDescriptionMode] = useState(false);
@@ -26,8 +29,8 @@ function GalleryItem({ image, updateLike, deletePost }) {
             <div className="gallery-item">
                 <img src={image.path} className="img-thumbnail"></img>
                 Cool Rating: {image.likes}
-                <button className= "btn btn-primary btn-block" onClick={toggleDescription}>show description</button>
-                <button className= "btn btn-primary btn-block" onClick={handleLike}>So Cool!</button>
+                <Button variant="outlined" onClick={toggleDescription}>show description</Button>
+                <Button variant="outlined" onClick={handleLike}>So Cool!</Button>
                 <button className= "btn btn-primary btn-block" onClick={handleDelete}>delete</button>
             </div>
         )
@@ -39,8 +42,8 @@ function GalleryItem({ image, updateLike, deletePost }) {
                 {image.description}.
               </div>
                 Cool Rating: {image.likes}
-                <button className= "btn btn-primary btn-block" onClick={toggleDescription}>hide description</button>
-                <button className= "btn btn-primary btn-block" onClick={handleLike}>So Cool!</button>
+                <Button variant="outlined" onClick={toggleDescription}>hide description</Button>
+                <Button variant="outlined" onClick={handleLike}>So Cool!</Button>
                 <button className= "btn btn-primary btn-block" onClick={handleDelete}>delete</button>
             </div>
         )
