@@ -1,8 +1,6 @@
-DROP TABLE "gallery";
-
 CREATE TABLE gallery (
 	"id" SERIAL PRIMARY KEY,
-	"path" VARCHAR(500) NOT NULL,
+	"path" VARCHAR(50000) NOT NULL,
 	"description" VARCHAR(500) NOT NULL,
 	"likes" DECIMAL
 );
@@ -16,5 +14,3 @@ VALUES
 ('images/Kisokaido36_Miyanokoshi.jpeg', 'Print made by Ando Hiroshige in the late 1830s depicting a station of the Nakasendo', 0),
 ('images/Kisokaido37_Fukushima.jpeg', 'Print made by Ando Hiroshige in the late 1830s depicting a station of the Nakasendo', 0),
 ('images/Kisokaido38_Agematsu.jpeg', 'Print made by Ando Hiroshige in the late 1830s depicting a station of the Nakasendo', 0);
-
-SELECT * FROM gallery
