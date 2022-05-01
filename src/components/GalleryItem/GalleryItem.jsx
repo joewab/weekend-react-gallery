@@ -20,9 +20,9 @@ function GalleryItem({ image, updateLike }) {
         return (
             <div className="gallery-item">
                 <img src={image.path} className="img-thumbnail"></img>
-                Likes: {image.likes}
+                Cool Rating: {image.likes}
                 <button className= "btn btn-primary btn-block" onClick={toggleDescription}>show description</button>
-                <button className= "btn btn-primary btn-block" onClick={handleLike}>Like</button>
+                <button className= "btn btn-primary btn-block" onClick={handleLike}>So Cool!</button>
             </div>
         )
     }
@@ -32,9 +32,9 @@ function GalleryItem({ image, updateLike }) {
               <div className="description-box">
                 {image.description}.
               </div>
-                Likes: {image.likes}
+                Cool Rating: {image.likes}
                 <button className= "btn btn-primary btn-block" onClick={toggleDescription}>hide description</button>
-                <button className= "btn btn-primary btn-block" onClick={handleLike}>Like</button>
+                <button className= "btn btn-primary btn-block" onClick={handleLike}>So Cool!</button>
             </div>
         )
     }
