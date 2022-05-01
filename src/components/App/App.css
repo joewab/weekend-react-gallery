@@ -13,3 +13,27 @@
   font-size: 1.5em;
 }
 
+#image-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+}
+
+.gallery-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.description-box{
+  width: 200px;
+  height: 100px;
+  background-color: aliceblue;
+}
+
+.description-area{
+  display: grid;
+  grid-template-columns: 1;
+}
